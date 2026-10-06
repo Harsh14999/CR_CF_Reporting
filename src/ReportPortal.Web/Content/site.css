@@ -28,6 +28,13 @@ a {
     margin: 0 auto;
 }
 
+.topbar .shell {
+    width: auto;
+    max-width: none;
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
 .topbar {
     position: relative;
     z-index: 2;
@@ -41,20 +48,20 @@ a {
     display: flex;
     align-items: center;
     min-height: 62px;
-    gap: 28px;
+    gap: 24px;
 }
 
 .brand {
     display: flex;
     align-items: center;
     gap: 10px;
-    min-width: 292px;
+    min-width: 314px;
 }
 
 .brand-logo {
-    width: 118px;
-    height: 32px;
-    padding: 3px;
+    width: 112px;
+    height: 34px;
+    padding: 2px;
     object-fit: contain;
     background: #ffffff;
     border-radius: 4px;
@@ -67,7 +74,7 @@ a {
 }
 
 .brand-text strong {
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 800;
 }
 
@@ -152,13 +159,13 @@ a {
 
 .login-copy {
     padding-left: 8px;
-    color: #ffffff;
-    text-shadow: 0 2px 20px rgba(8, 55, 44, .16);
+    color: #12362d;
+    text-shadow: none;
 }
 
 .hero-logo {
-    width: 190px;
-    height: 58px;
+    width: 210px;
+    height: 64px;
     padding: 6px;
     object-fit: contain;
     background: #ffffff;
@@ -180,7 +187,7 @@ a {
 .login-copy h1 {
     max-width: 620px;
     margin: 22px 0 20px;
-    color: #ffffff;
+    color: #12362d;
     font-size: 58px;
     line-height: 1.12;
     font-weight: 900;
@@ -189,7 +196,7 @@ a {
 .login-copy p {
     max-width: 620px;
     margin: 0;
-    color: rgba(255, 255, 255, .78);
+    color: #60736c;
     font-size: 16px;
     line-height: 1.8;
 }
@@ -390,7 +397,7 @@ a {
 .app-card {
     position: relative;
     min-height: 252px;
-    padding: 20px 18px 18px;
+    padding: 20px 22px 18px;
     overflow: hidden;
 }
 
@@ -407,9 +414,9 @@ a {
     position: relative;
     width: 44px;
     height: 44px;
-    border: 1px solid #d9c27a;
+    border: 1px solid #d6e4de;
     border-radius: 8px;
-    background: #fbf8e7;
+    background: #ffffff;
 }
 
 .app-icon span,
@@ -448,7 +455,7 @@ a {
 .app-badge {
     position: absolute;
     top: 24px;
-    right: 18px;
+    right: 22px;
     display: inline-block;
     padding: 9px 13px;
     border: 1px solid #d1e9dd;
@@ -460,7 +467,7 @@ a {
 }
 
 .app-card h2 {
-    margin: 18px 0 9px;
+    margin: 17px 0 9px;
     max-width: 330px;
     color: #122b24;
     font-size: 19px;
@@ -477,8 +484,8 @@ a {
 
 .action-row {
     position: absolute;
-    left: 18px;
-    right: 18px;
+    left: 22px;
+    right: 22px;
     bottom: 18px;
     display: flex;
     flex-wrap: wrap;
@@ -536,6 +543,12 @@ a {
 @media (max-width: 900px) {
     .shell {
         width: calc(100% - 24px);
+    }
+
+    .topbar .shell {
+        width: auto;
+        margin-left: 12px;
+        margin-right: 12px;
     }
 
     .topbar-inner,
