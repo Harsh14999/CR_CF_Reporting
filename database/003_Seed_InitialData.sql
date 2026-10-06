@@ -2,6 +2,7 @@ USE [ReportPortalDb];
 GO
 
 DECLARE @SampleUser nvarchar(200) = N'DOMAIN\Harsh.V';
+DECLARE @OrmsUatReportsUrl nvarchar(500) = N'https://connectpbidev.dibuat.ae/reports/browse/ORMS-%20UAT';
 DECLARE @OrmsId int;
 DECLARE @CadcrmId int;
 
@@ -20,16 +21,24 @@ END
 SELECT @OrmsId = ApplicationId FROM dbo.Applications WHERE ApplicationCode = N'ORMS';
 SELECT @CadcrmId = ApplicationId FROM dbo.Applications WHERE ApplicationCode = N'CADCRM';
 
+UPDATE dbo.Reports
+SET IsActive = 0
+WHERE ApplicationId = @OrmsId
+  AND ReportServerPath <> @OrmsUatReportsUrl;
+
+IF NOT EXISTS (SELECT 1 FROM dbo.Reports WHERE ApplicationId = @OrmsId AND ReportServerPath = @OrmsUatReportsUrl)
+    INSERT INTO dbo.Reports (ApplicationId, ReportName, ReportDescription, ReportServerPath, OpenMode, DisplayOrder, IsActive) VALUES (@OrmsId, N'ORMS UAT Reports', N'Power BI Report Server UAT folder', @OrmsUatReportsUrl, N'NewTab', 1, 1);
+
 IF NOT EXISTS (SELECT 1 FROM dbo.Reports WHERE ApplicationId = @OrmsId AND ReportServerPath = N'/ORMS/RptRCSADetailSA')
-    INSERT INTO dbo.Reports (ApplicationId, ReportName, ReportServerPath, OpenMode, DisplayOrder, IsActive) VALUES (@OrmsId, N'RCSA Detail SA', N'/ORMS/RptRCSADetailSA', N'NewTab', 1, 1);
+    INSERT INTO dbo.Reports (ApplicationId, ReportName, ReportServerPath, OpenMode, DisplayOrder, IsActive) VALUES (@OrmsId, N'RCSA Detail SA', N'/ORMS/RptRCSADetailSA', N'NewTab', 10, 0);
 IF NOT EXISTS (SELECT 1 FROM dbo.Reports WHERE ApplicationId = @OrmsId AND ReportServerPath = N'/ORMS/RptRCSADetailInAu')
-    INSERT INTO dbo.Reports (ApplicationId, ReportName, ReportServerPath, OpenMode, DisplayOrder, IsActive) VALUES (@OrmsId, N'RCSA Detail Input Authorization', N'/ORMS/RptRCSADetailInAu', N'NewTab', 2, 1);
+    INSERT INTO dbo.Reports (ApplicationId, ReportName, ReportServerPath, OpenMode, DisplayOrder, IsActive) VALUES (@OrmsId, N'RCSA Detail Input Authorization', N'/ORMS/RptRCSADetailInAu', N'NewTab', 20, 0);
 IF NOT EXISTS (SELECT 1 FROM dbo.Reports WHERE ApplicationId = @OrmsId AND ReportServerPath = N'/ORMS/RPTEventDetail')
-    INSERT INTO dbo.Reports (ApplicationId, ReportName, ReportServerPath, OpenMode, DisplayOrder, IsActive) VALUES (@OrmsId, N'Event Detail', N'/ORMS/RPTEventDetail', N'NewTab', 3, 1);
+    INSERT INTO dbo.Reports (ApplicationId, ReportName, ReportServerPath, OpenMode, DisplayOrder, IsActive) VALUES (@OrmsId, N'Event Detail', N'/ORMS/RPTEventDetail', N'NewTab', 30, 0);
 IF NOT EXISTS (SELECT 1 FROM dbo.Reports WHERE ApplicationId = @OrmsId AND ReportServerPath = N'/ORMS/RptKRI')
-    INSERT INTO dbo.Reports (ApplicationId, ReportName, ReportServerPath, OpenMode, DisplayOrder, IsActive) VALUES (@OrmsId, N'KRI Report', N'/ORMS/RptKRI', N'NewTab', 4, 1);
+    INSERT INTO dbo.Reports (ApplicationId, ReportName, ReportServerPath, OpenMode, DisplayOrder, IsActive) VALUES (@OrmsId, N'KRI Report', N'/ORMS/RptKRI', N'NewTab', 40, 0);
 IF NOT EXISTS (SELECT 1 FROM dbo.Reports WHERE ApplicationId = @OrmsId AND ReportServerPath = N'/ORMS/RptFRA')
-    INSERT INTO dbo.Reports (ApplicationId, ReportName, ReportServerPath, OpenMode, DisplayOrder, IsActive) VALUES (@OrmsId, N'FRA Report', N'/ORMS/RptFRA', N'NewTab', 5, 1);
+    INSERT INTO dbo.Reports (ApplicationId, ReportName, ReportServerPath, OpenMode, DisplayOrder, IsActive) VALUES (@OrmsId, N'FRA Report', N'/ORMS/RptFRA', N'NewTab', 50, 0);
 
 IF NOT EXISTS (SELECT 1 FROM dbo.Reports WHERE ApplicationId = @CadcrmId AND ReportServerPath = N'/CADCRM/CADCRMSummary')
     INSERT INTO dbo.Reports (ApplicationId, ReportName, ReportServerPath, OpenMode, DisplayOrder, IsActive) VALUES (@CadcrmId, N'CADCRM Summary Report', N'/CADCRM/CADCRMSummary', N'NewTab', 1, 1);

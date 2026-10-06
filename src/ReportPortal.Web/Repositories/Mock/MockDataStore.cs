@@ -6,6 +6,7 @@ namespace ReportPortal.Web.Repositories.Mock
     internal static class MockDataStore
     {
         public const string SampleUserName = "DOMAIN\\Harsh.V";
+        private const string OrmsUatReportsUrl = "https://connectpbidev.dibuat.ae/reports/browse/ORMS-%20UAT";
 
         public static readonly IList<ApplicationInfo> Applications = new List<ApplicationInfo>
         {
@@ -15,11 +16,7 @@ namespace ReportPortal.Web.Repositories.Mock
 
         public static readonly IList<ReportInfo> Reports = new List<ReportInfo>
         {
-            new ReportInfo { ReportId = 1, ApplicationId = 1, ApplicationCode = "ORMS", ApplicationName = "Operational Risk Management System", ReportName = "RCSA Detail SA", ReportServerPath = "/ORMS/RptRCSADetailSA", OpenMode = "NewTab", DisplayOrder = 1, IsActive = true },
-            new ReportInfo { ReportId = 2, ApplicationId = 1, ApplicationCode = "ORMS", ApplicationName = "Operational Risk Management System", ReportName = "RCSA Detail Input Authorization", ReportServerPath = "/ORMS/RptRCSADetailInAu", OpenMode = "NewTab", DisplayOrder = 2, IsActive = true },
-            new ReportInfo { ReportId = 3, ApplicationId = 1, ApplicationCode = "ORMS", ApplicationName = "Operational Risk Management System", ReportName = "Event Detail", ReportServerPath = "/ORMS/RPTEventDetail", OpenMode = "NewTab", DisplayOrder = 3, IsActive = true },
-            new ReportInfo { ReportId = 4, ApplicationId = 1, ApplicationCode = "ORMS", ApplicationName = "Operational Risk Management System", ReportName = "KRI Report", ReportServerPath = "/ORMS/RptKRI", OpenMode = "NewTab", DisplayOrder = 4, IsActive = true },
-            new ReportInfo { ReportId = 5, ApplicationId = 1, ApplicationCode = "ORMS", ApplicationName = "Operational Risk Management System", ReportName = "FRA Report", ReportServerPath = "/ORMS/RptFRA", OpenMode = "NewTab", DisplayOrder = 5, IsActive = true },
+            new ReportInfo { ReportId = 1, ApplicationId = 1, ApplicationCode = "ORMS", ApplicationName = "Operational Risk Management System", ReportName = "ORMS UAT Reports", ReportDescription = "Power BI Report Server UAT folder", ReportServerPath = OrmsUatReportsUrl, OpenMode = "NewTab", DisplayOrder = 1, IsActive = true },
             new ReportInfo { ReportId = 6, ApplicationId = 2, ApplicationCode = "CADCRM", ApplicationName = "CADCRM", ReportName = "CADCRM Summary Report", ReportServerPath = "/CADCRM/CADCRMSummary", OpenMode = "NewTab", DisplayOrder = 1, IsActive = true },
             new ReportInfo { ReportId = 7, ApplicationId = 2, ApplicationCode = "CADCRM", ApplicationName = "CADCRM", ReportName = "CADCRM Detail Report", ReportServerPath = "/CADCRM/CADCRMDetail", OpenMode = "NewTab", DisplayOrder = 2, IsActive = true }
         };
