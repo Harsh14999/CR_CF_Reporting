@@ -33,6 +33,10 @@ The repository includes the required MVC 5 NuGet packages for offline builds:
 
 Required packages are MVC 5 packages only: `Microsoft.AspNet.Mvc`, `Microsoft.AspNet.Razor`, `Microsoft.AspNet.WebPages`, and `Microsoft.Web.Infrastructure`.
 
+## Razor assembly load error
+
+If the browser shows `Could not load file or assembly 'System.Web.Razor'` with `manifest definition does not match the assembly reference`, pull the latest repository changes, close Visual Studio, delete `src/ReportPortal.Web/bin` and `src/ReportPortal.Web/obj`, reopen the solution, restore NuGet packages from the local feed, and rebuild.
+
 ## Switch to SQL Server
 
 1. Run the SQL scripts in [../database](../database) in numeric order.
