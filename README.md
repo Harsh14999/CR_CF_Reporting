@@ -26,6 +26,8 @@ DOMAIN\Harsh.V
 
 Any non-empty Windows user ID can sign in, but only `DOMAIN\Harsh.V` has seeded mock access to ORMS and CADCRM.
 
+If Visual Studio shows `Project Target Framework Not Installed` for `.NETFramework,Version=v4.7.2`, do not choose the option to retarget the project to .NET Framework 4.6.1. Install the .NET Framework 4.7.2 Developer Pack / Targeting Pack on the VDI, then reload the solution.
+
 ## Create the database in SSMS
 
 On VDI:
