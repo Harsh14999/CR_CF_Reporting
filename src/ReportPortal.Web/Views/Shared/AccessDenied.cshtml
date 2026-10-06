@@ -1,0 +1,10 @@
+@{
+    ViewBag.Title = "Access denied";
+}
+
+<section class="message-panel">
+    <span class="eyebrow">Access denied</span>
+    <h1>You do not have access to this item.</h1>
+    <p>Please contact the portal administrator if you need this report application assigned to your Windows user ID.</p>
+    @Html.ActionLink("Back to applications", "Index", "Home", null, new { @class = "btn btn-primary" })
+</section>

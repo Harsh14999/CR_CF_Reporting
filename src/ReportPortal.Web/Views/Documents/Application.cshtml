@@ -1,0 +1,37 @@
+@model ReportPortal.Web.ViewModels.DocumentListViewModel
+@{
+    ViewBag.Title = Model.ApplicationCode + " Documents";
+}
+
+<section class="page-title compact">
+    <span class="eyebrow">@Model.ApplicationCode</span>
+    <h1>Static Documents</h1>
+    <p>Open application documents in a new browser tab.</p>
+</section>
+
+@if (Model.Documents == null || Model.Documents.Count == 0)
+{
+    <div class="empty-state">No active static documents are available for this application.</div>
+}
+else
+{
+    <section class="list-panel">
+        @foreach (var document in Model.Documents)
+        {
+            <article class="list-row">
+                <div>
+                    <h2>@document.DocumentName</h2>
+                    @if (!string.IsNullOrWhiteSpace(document.DocumentDescription))
+                    {
+                        <p>@document.DocumentDescription</p>
+                    }
+                </div>
+                @using (Html.BeginForm("Open", "Documents", new { id = document.DocumentId }, FormMethod.Post, new { target = "_blank" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <button class="btn btn-primary" type="submit">Open static document</button>
+                }
+            </article>
+        }
+    </section>
+}

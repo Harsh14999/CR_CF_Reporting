@@ -1,0 +1,37 @@
+@model ReportPortal.Web.ViewModels.ReportListViewModel
+@{
+    ViewBag.Title = Model.ApplicationCode + " Reports";
+}
+
+<section class="page-title compact">
+    <span class="eyebrow">@Model.ApplicationCode</span>
+    <h1>Reports</h1>
+    <p>Select a report to open it from the configured report server.</p>
+</section>
+
+@if (Model.Reports == null || Model.Reports.Count == 0)
+{
+    <div class="empty-state">No active reports are available for this application.</div>
+}
+else
+{
+    <section class="list-panel">
+        @foreach (var report in Model.Reports)
+        {
+            <article class="list-row">
+                <div>
+                    <h2>@report.ReportName</h2>
+                    @if (!string.IsNullOrWhiteSpace(report.ReportDescription))
+                    {
+                        <p>@report.ReportDescription</p>
+                    }
+                </div>
+                @using (Html.BeginForm("Launch", "Reports", new { id = report.ReportId }, FormMethod.Post, new { target = "_blank" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <button class="btn btn-primary" type="submit">Open report</button>
+                }
+            </article>
+        }
+    </section>
+}

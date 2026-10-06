@@ -1,0 +1,50 @@
+@model ReportPortal.Web.ViewModels.DashboardViewModel
+@{
+    ViewBag.Title = "Report Applications";
+    ViewBag.BodyClass = "dashboard-page";
+}
+
+<section class="page-title">
+    <div>
+        <span class="eyebrow">Applications</span>
+        <h1>Report Applications</h1>
+        <p>Open the report suites available to your Windows account.</p>
+    </div>
+    <div class="title-badges">
+        @if (ViewBag.UseMockData == true)
+        {
+            <span class="mode-badge">Mock data</span>
+        }
+        <span class="title-user">@Model.CurrentUser</span>
+    </div>
+</section>
+
+@if (Model.Applications == null || Model.Applications.Count == 0)
+{
+    <div class="empty-state">No applications are assigned to your user.</div>
+}
+else
+{
+    <section class="card-grid">
+        @foreach (var app in Model.Applications)
+        {
+            <article class="app-card">
+                <div class="card-accent"></div>
+                <div class="app-icon @app.IconCss"><span></span></div>
+                <span class="app-badge">@app.ApplicationCode</span>
+                <h2>@app.ApplicationName</h2>
+                <p>@app.Description</p>
+                <div class="action-row">
+                    @if (app.HasReports)
+                    {
+                        @Html.ActionLink("Open reports", "Application", "Reports", new { applicationCode = app.ApplicationCode }, new { @class = "btn btn-primary" })
+                    }
+                    @if (app.HasDocuments)
+                    {
+                        @Html.ActionLink("Open static document", "Application", "Documents", new { applicationCode = app.ApplicationCode }, new { @class = "btn btn-secondary" })
+                    }
+                </div>
+            </article>
+        }
+    </section>
+}

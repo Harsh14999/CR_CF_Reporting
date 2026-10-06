@@ -1,0 +1,29 @@
+# Visual Studio user files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build output
+[Bb]in/
+[Oo]bj/
+build/
+publish/
+PublishedWebsites/
+
+# NuGet packages restored by Visual Studio
+packages/
+!src/**/packages.config
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+TestResult*/
+TestResults/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/

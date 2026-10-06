@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title - Enterprise Report Portal</title>
+    <link href="~/Content/site.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="@ViewBag.BodyClass">
+    <header class="topbar">
+        <div class="shell topbar-inner">
+            <a class="brand" href="@Url.Action("Index", "Home")">
+                <img class="brand-logo" src="@Url.Content("~/Content/images/dib-logo.svg")" alt="Dubai Islamic Bank" />
+                <span class="brand-text">
+                    <strong>Dubai Islamic Bank</strong>
+                    <span>Enterprise Report Portal</span>
+                </span>
+            </a>
+            @if (!string.IsNullOrWhiteSpace(ViewBag.CurrentUser as string))
+            {
+                <nav class="main-nav">
+                    <a href="@Url.Action("Index", "Home")">Home</a>
+                </nav>
+            }
+            @if (!string.IsNullOrWhiteSpace(ViewBag.CurrentUser as string))
+            {
+                <div class="user-area">
+                    <span class="user-badge"><span class="badge-dot"></span>@(ViewBag.CurrentUser)</span>
+                    <a class="signout" href="@Url.Action("SignOut", "Account")">Sign out</a>
+                </div>
+            }
+        </div>
+    </header>
+    <main class="shell page">
+        @RenderBody()
+    </main>
+</body>
+</html>

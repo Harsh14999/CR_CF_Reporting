@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="96" viewBox="0 0 360 96" role="img" aria-label="Dubai Islamic Bank logo">
+  <rect width="360" height="96" fill="#ffffff"/>
+  <g transform="translate(6 8)">
+    <ellipse cx="45" cy="40" rx="42" ry="36" fill="#098d50"/>
+    <path d="M8 43 C20 23 42 9 75 11" fill="none" stroke="#dfc671" stroke-width="7" stroke-linecap="round"/>
+    <path d="M11 58 C28 43 52 35 82 34" fill="none" stroke="#dfc671" stroke-width="7" stroke-linecap="round"/>
+    <path d="M25 14 C38 30 46 50 50 76" fill="none" stroke="#dfc671" stroke-width="7" stroke-linecap="round"/>
+    <path d="M52 8 C45 26 41 47 41 78" fill="none" stroke="#dfc671" stroke-width="7" stroke-linecap="round"/>
+    <path d="M1 38 C9 30 20 26 34 24 C28 32 26 42 31 52 C18 49 8 45 1 38Z" fill="#b64a54"/>
+  </g>
+  <g fill="#07884b" font-family="Arial, Helvetica, sans-serif" font-weight="700">
+    <text x="112" y="64" font-size="70">DIB</text>
+  </g>
+</svg>
