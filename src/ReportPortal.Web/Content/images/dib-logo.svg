@@ -1,30 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="730" height="200" viewBox="0 0 730 200" role="img" aria-label="Dubai Islamic Bank logo">
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="180" viewBox="0 0 340 180" role="img" aria-label="Dubai Islamic Bank logo">
   <defs>
-    <radialGradient id="globeGreen" cx="62%" cy="37%" r="72%">
-      <stop offset="0" stop-color="#25b66c"/>
-      <stop offset="0.55" stop-color="#07864b"/>
-      <stop offset="1" stop-color="#006b3d"/>
+    <radialGradient id="globeGreen" cx="64%" cy="36%" r="72%">
+      <stop offset="0" stop-color="#34be75"/>
+      <stop offset="0.48" stop-color="#079051"/>
+      <stop offset="1" stop-color="#00683a"/>
     </radialGradient>
-    <linearGradient id="gridGold" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0" stop-color="#f4e7aa"/>
-      <stop offset="1" stop-color="#c5a155"/>
+    <linearGradient id="gridGold" x1="0" x2="1" y1="0" y2="0.95">
+      <stop offset="0" stop-color="#fff4b9"/>
+      <stop offset="0.55" stop-color="#e3cf83"/>
+      <stop offset="1" stop-color="#b8954d"/>
     </linearGradient>
     <linearGradient id="dibGreen" x1="0" x2="0" y1="0" y2="1">
-      <stop offset="0" stop-color="#008b4f"/>
-      <stop offset="1" stop-color="#006b3f"/>
+      <stop offset="0" stop-color="#0a9155"/>
+      <stop offset="1" stop-color="#007143"/>
     </linearGradient>
   </defs>
-  <rect width="730" height="200" fill="#ffffff"/>
-  <g transform="translate(34 48)">
-    <ellipse cx="98" cy="58" rx="93" ry="68" fill="url(#globeGreen)"/>
-    <path d="M20 78 C45 37 96 11 168 14" fill="none" stroke="url(#gridGold)" stroke-width="11" stroke-linecap="round"/>
-    <path d="M26 103 C66 70 112 56 181 58" fill="none" stroke="url(#gridGold)" stroke-width="11" stroke-linecap="round"/>
-    <path d="M56 12 C79 43 95 82 101 130" fill="none" stroke="url(#gridGold)" stroke-width="11" stroke-linecap="round"/>
-    <path d="M117 7 C99 43 91 86 93 132" fill="none" stroke="url(#gridGold)" stroke-width="11" stroke-linecap="round"/>
-    <path d="M7 70 C25 53 50 44 80 42 C62 60 59 82 72 101 C44 95 22 85 7 70Z" fill="#a94854"/>
+  <g transform="translate(22 58)">
+    <ellipse cx="55" cy="48" rx="52" ry="48" fill="url(#globeGreen)"/>
+    <path d="M9 58 C24 29 55 12 95 14" fill="none" stroke="url(#gridGold)" stroke-width="7" stroke-linecap="round"/>
+    <path d="M14 78 C39 55 67 44 103 45" fill="none" stroke="url(#gridGold)" stroke-width="7" stroke-linecap="round"/>
+    <path d="M32 10 C45 33 54 62 57 94" fill="none" stroke="url(#gridGold)" stroke-width="7" stroke-linecap="round"/>
+    <path d="M68 7 C57 31 52 64 53 97" fill="none" stroke="url(#gridGold)" stroke-width="7" stroke-linecap="round"/>
+    <path d="M2 55 C13 44 28 38 46 36 C35 48 33 63 41 76 C24 72 11 65 2 55Z" fill="#ad4c59"/>
   </g>
   <g fill="url(#dibGreen)" font-family="Arial, Helvetica, sans-serif" font-weight="700">
-    <text x="300" y="58" font-size="42">دبي الإسلامي</text>
-    <text x="292" y="166" font-size="132" letter-spacing="2">DIB</text>
+    <text x="146" y="60" font-size="26">دبي الإسلامي</text>
+    <text x="145" y="138" font-size="88" letter-spacing="1">DIB</text>
   </g>
 </svg>
