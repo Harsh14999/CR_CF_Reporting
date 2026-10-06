@@ -12,8 +12,9 @@ build/
 publish/
 PublishedWebsites/
 
-# NuGet packages restored by Visual Studio
-packages/
+# NuGet packages are intentionally committed for offline VDI builds.
+!packages/
+!offline-packages/
 !src/**/packages.config
 
 # Logs and temporary files

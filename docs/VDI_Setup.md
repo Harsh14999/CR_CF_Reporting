@@ -24,12 +24,12 @@ The project targets .NET Framework 4.6.1 to match locked-down client VDI machine
 
 ## Offline NuGet restore
 
-If the VDI cannot reach NuGet:
+The repository includes the required MVC 5 NuGet packages for offline builds:
 
-1. Restore on a machine with internet access.
-2. Copy the `packages` folder beside `ReportPortal.sln`, if policy allows.
-3. In Visual Studio 2017, add the copied folder as a local NuGet source.
-4. Restore packages again from the local source.
+1. `packages` contains the expanded DLLs referenced by the project.
+2. `offline-packages` contains the `.nupkg` files.
+3. [../NuGet.Config](../NuGet.Config) points package restore to `offline-packages` and clears internet sources.
+4. If Visual Studio still shows missing package references, right-click the solution and choose Restore NuGet Packages. It should restore from the local folder.
 
 Required packages are MVC 5 packages only: `Microsoft.AspNet.Mvc`, `Microsoft.AspNet.Razor`, `Microsoft.AspNet.WebPages`, and `Microsoft.Web.Infrastructure`.
 

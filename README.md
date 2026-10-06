@@ -60,13 +60,13 @@ Set `UseMockData=false` to use SQL Server via ADO.NET repositories.
 
 ## Offline NuGet restore in VDI
 
-Use standard MVC 5 packages only. If the VDI has no internet access:
+The required MVC 5 NuGet packages are committed with the repository for locked-down VDI builds:
 
-1. Restore packages on a machine with internet access if possible.
-2. Copy the restored `packages` folder with the solution if client policy allows.
-3. Configure a local NuGet package source in Visual Studio 2017 if needed.
+- `packages` contains the expanded assemblies used by the project references.
+- `offline-packages` contains the `.nupkg` files used by local restore.
+- [NuGet.Config](NuGet.Config) clears internet package sources and points restore to `offline-packages`.
 
-The required package list is in [src/ReportPortal.Web/packages.config](src/ReportPortal.Web/packages.config).
+In Visual Studio 2017, open the solution and build. If you choose Restore NuGet Packages, it should restore from the local `offline-packages` folder instead of `api.nuget.org`.
 
 ## Add a new application
 
