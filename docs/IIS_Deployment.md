@@ -3,7 +3,7 @@
 ## Prerequisites
 
 - IIS with ASP.NET 4.x enabled.
-- .NET Framework 4.7.2 installed on the server.
+- .NET Framework 4.6.1 or later installed on the server.
 - SQL Server database created with the scripts in [../database](../database).
 - A Windows identity or app pool identity that can read the site files and connect to SQL Server.
 

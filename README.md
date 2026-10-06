@@ -1,6 +1,6 @@
 # DIB Enterprise Report Portal
 
-Internal ASP.NET MVC 5 report portal for existing Power BI Report Builder, SSRS, and Power BI Report Server RDL reports. The solution targets Visual Studio 2017, .NET Framework 4.7.2, IIS, SQL Server, Razor views, ADO.NET, and `packages.config` NuGet restore.
+Internal ASP.NET MVC 5 report portal for existing Power BI Report Builder, SSRS, and Power BI Report Server RDL reports. The solution targets Visual Studio 2017, .NET Framework 4.6.1, IIS, SQL Server, Razor views, ADO.NET, and `packages.config` NuGet restore.
 
 ## Project layout
 
@@ -26,7 +26,7 @@ DOMAIN\Harsh.V
 
 Any non-empty Windows user ID can sign in, but only `DOMAIN\Harsh.V` has seeded mock access to ORMS and CADCRM.
 
-If Visual Studio shows `Project Target Framework Not Installed` for `.NETFramework,Version=v4.7.2`, do not choose the option to retarget the project to .NET Framework 4.6.1. Install the .NET Framework 4.7.2 Developer Pack / Targeting Pack on the VDI, then reload the solution.
+The project targets .NET Framework 4.6.1 to match the locked-down client VDI. If Visual Studio prompts about retargeting, keep/select .NET Framework 4.6.1.
 
 ## Create the database in SSMS
 
